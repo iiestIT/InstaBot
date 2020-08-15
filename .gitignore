@@ -130,3 +130,4 @@ dmypy.json
 
 # dev files
 xpath_res.txt
+driver/
