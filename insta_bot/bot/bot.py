@@ -37,7 +37,11 @@ class Bot:
             time.sleep(1)
 
     def logout(self):
-        pass
+        menu = self.driver.find_element_by_xpath('//span[@class="_2dbep qNELH"]')
+        menu.click()
+        time.sleep(1)
+        logout = self.driver.find_element_by_xpath('//div[@class="-qQT3"]')
+        logout.click()
 
     def pm(self):
         pass
@@ -47,3 +51,8 @@ class Bot:
 
     def commend(self):
         pass
+
+
+bot = Bot("K:\Code\InstaBot\insta_bot\driver\chromedriver.exe", "iiest.music")
+bot.login("@=/iAPX8_YsNU9+")
+bot.logout()
