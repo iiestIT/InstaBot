@@ -51,8 +51,3 @@ class Bot:
 
     def commend(self):
         pass
-
-
-bot = Bot("K:\Code\InstaBot\insta_bot\driver\chromedriver.exe", "iiest.music")
-bot.login("@=/iAPX8_YsNU9+")
-bot.logout()
