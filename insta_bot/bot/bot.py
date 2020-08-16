@@ -81,8 +81,30 @@ class Bot:
         except:
             return False
 
-    def like(self) -> bool:
-        pass
+    def like(self, pic_url: str) -> bool:
+        """
+        :param pic_url: valid instagram post url
+        :return: bool
+        """
+        try:
+            self.driver.get(pic_url)
+            like_btn = self.driver.find_element_by_xpath('//section//span[@class="fr66n"]')
+            like_btn.click()
+        except:
+            return False
 
-    def commend(self) -> bool:
-        pass
+    def comment(self, msg: str, pic_url: str) -> bool:  # TODO: fix select issue
+        """
+        :param msg: the message itself
+        :param pic_url: valid instagram post url
+        :return: bool
+        """
+        msg = str(msg)
+        try:
+            self.driver.get(pic_url)
+            time.sleep(4)
+            cf = self.driver.find_element_by_xpath('//textarea[@class="Ypffh"]')
+            cf.send_keys(msg)
+            cf.submit()
+        except:
+            return False
